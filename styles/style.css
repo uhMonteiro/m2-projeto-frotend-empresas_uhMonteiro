@@ -11,9 +11,6 @@
     --color-grey-5:#F1F3F5 ;
 }
 
-body{
-    height: 100vh;
-}
 
 header{
     display: flex;
@@ -71,5 +68,23 @@ header > .buttons > .login{
 header > .buttons > .register{
     background-color: var(--color-brand-1);
     color: white;
+}
+
+main{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 20px;
+    height: 85vh;
+}
+
+main > img{
+    height: 100%;
+}
+
+section{
+    border: 1px solid black;
+    width: 50%;
 }
 
