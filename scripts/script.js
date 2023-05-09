@@ -1,4 +1,5 @@
 const baseUrl = 'http://localhost:3333'
+import { loginRequest } from "./request.js"
 
 
 const handleModalLogin = () =>{
@@ -35,6 +36,7 @@ const getAllCategories = async () =>{
     })
     .then(res => res.json())
 
+   console.log(allCategories)
     return allCategories
 }
 
@@ -52,37 +54,93 @@ const renderSelect = async () =>{
     })
 }
 
-const createListCompanies = (array) =>{
-
-    const div = document.createElement('div')
-    const h2 = document.createElement('h2')
-    const p = document.createElement('p')
-
-    h2.innerText = array.name
-    p.innerText = j
-
-    div.append(h2 , p)
-}
-
-const renderListCompanies = () =>{
+function filterCompanies() {
     const select = document.querySelector('select')
+    const div = document.querySelector('.companies')
 
     select.addEventListener('change' , async () =>{
         const selectValue = select.value
+        div.innerHTML = ""
 
         const filterCategory = await fetch(`${baseUrl}/companies/readByCategory/${selectValue}` ,{
             method: "GET"
         })
-        .then(res => res.json())
+        .then(async (res) =>{
+            if(res.ok){
+                const response = await res.json()
+
+                return response
+            }else{
+                const allCompanies = await fetch (`${baseUrl}/companies/readAll`,{
+                    method: "GET"
+                })
+                .then(response => response.json())
+                return allCompanies
+            }
+        })
 
         console.log(filterCategory)
 
-        return filterCategory
+        renderFilterCompanies(filterCategory)
     })
 }
 
-renderListCompanies()
+function renderFilterCompanies  (array) {
+    const div = document.querySelector('.companies')
 
+    array.forEach(arr =>{
+    
+        const divItens = document.createElement('div')
+        const h3 = document.createElement('h3')
+        const p = document.createElement('p')
+
+        h3.innerText = arr.name
+
+        divItens.append(h3 , p)
+        div.appendChild(divItens)
+    })
+}
+
+async function  renderCompanies(){
+    const allCompanies = await fetch (`${baseUrl}/companies/readAll`,{
+        method: "GET"
+    })
+    .then(response => response.json())
+
+    renderFilterCompanies(allCompanies)
+}
+
+function handleLogin(){
+    const inputs = document.querySelectorAll('.input__login')
+    const button = document.querySelector('.button__modal__login')
+
+    let loginBody = {}
+    let count= 0
+
+    button.addEventListener('click', async (e) =>{
+        e.preventDefault()
+
+        inputs.forEach(input =>{
+            if(input.value.trim() === ''){
+                count ++
+            }
+
+            loginBody[input.name] = input.value
+        })
+        if(count !== 0){
+            count = 0
+            return alert('preencha os campos necessários')
+        }else{
+            const token = await loginRequest(loginBody)
+
+            return token
+        }
+    })
+}
+
+handleLogin()
+await renderCompanies()
+filterCompanies()
 renderSelect()
 handleRegisterModal()
 handleModalLogin()

@@ -127,14 +127,14 @@ section > select{
     line-height: 39px;
 }
 
-.list__companies > div{
+.list__companies > span > div{
     border: 1px solid var(--color-brand-1);
     margin-top: 10px;
     height: 70px;
     padding: 10px 10px;
 }
 
-.list__companies > div > h3{
+.list__companies > span > div > h3{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -142,7 +142,7 @@ section > select{
     line-height: 24px;
 }
 
-.list__companies > div > p{
+.list__companies > span > div > p{
     margin-top: 15px;
 
     font-family: 'Inter';
