@@ -63,6 +63,10 @@ header > .buttons > button{
     text-align: center;
 }
 
+header > .buttons > button:hover{
+    cursor: pointer;
+}
+
 header > .buttons > .login__button{
     background-color: white;
     color: var(--color-brand-1);
@@ -289,6 +293,10 @@ section > select{
     margin-top: 15px;
 }
 
+.register__modal > .div__register > .modal__register__button:hover{
+    cursor: pointer;
+}
+
 .register__modal > .div__register > .modal__button__return{
     font-family: 'Inter';
     font-style: normal;
@@ -303,4 +311,8 @@ section > select{
     height: 40px;
 
     margin-top: 15px;
+}
+
+.register__modal > .div__register > .modal__button__return:hover{
+    cursor: pointer;
 }

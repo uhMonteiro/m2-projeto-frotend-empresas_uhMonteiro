@@ -1,0 +1,109 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+
+:root{
+    --color-brand-1: #0000FF;
+    --color-brand-2: #3532FF;
+    --color-action-1: #36B37E;
+    --color-action-2: #FF5630;
+    --color-action-3: #FFAB00;
+    --color-grey-1:#212529 ;
+    --color-grey-2:#495057 ;
+    --color-grey-3:#ADB5BD ;
+    --color-grey-4:#E9ECEF ;
+    --color-grey-5:#F1F3F5 ;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--color-grey-4);
+    height: 60px;
+}
+
+header > div{
+    display: flex;
+    margin-left: 20%;
+    gap: 10px;
+}
+
+header > div > h2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 39px;
+}
+
+header > button{
+    margin-right: 20%;
+
+    box-sizing: border-box;
+    border: 1px solid var(--color-brand-1);
+
+    height: 50px;
+    width: 150px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 21px;
+    text-align: center;
+
+    background-color: white;
+    color: var(--color-brand-1);
+}
+
+main > div{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 20px;
+    border: 1px solid var(--color-grey-4);
+
+    height: 100px;
+    padding: 15px;
+}
+
+main > div > h2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 39px;
+}
+
+main > div > p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 22px;
+
+    margin-top: 10px;
+}
+
+main > section{
+    border: 1px solid var(--color-grey-4);
+    margin-right: 20%;
+    margin-left: 20%;
+
+    margin-top: 20px;
+    height: 500px;
+
+    background-color: var(--color-grey-5);
+
+    display: flex;
+}
+
+main > section > h2{
+    align-self: center;
+    margin-left: 30%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 39px;
+}
