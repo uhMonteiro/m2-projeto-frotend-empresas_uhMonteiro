@@ -15,8 +15,8 @@
             <h2>Kenzie Empresas</h2>
         </div>
         <div class="buttons">
-            <button class="login">Login</button>
-            <button class="register">Cadastro</button>
+            <button class="login__button">Login</button>
+            <button class="register__button">Cadastro</button>
         </div>
     </header>
     <main>
@@ -25,15 +25,55 @@
             <select name="" id="">
                 <option value="">Selecionar setor</option>
             </select>
-            <div>
+            <div class="list__companies">
                 <h2>Lista de Empresas</h2>
                 <div>
-                    <h2>NomeEmpresa</h2>
+                    <h3>NomeEmpresa</h3>
+                    <p>Setor</p>
+                </div>
+                <div>
+                    <h3>NomeEmpresa</h3>
+                    <p>Setor</p>
+                </div>
+                <div>
+                    <h3>NomeEmpresa</h3>
+                    <p>Setor</p>
+                </div>
+                <div>
+                    <h3>NomeEmpresa</h3>
+                    <p>Setor</p>
+                </div>
+                <div>
+                    <h3>NomeEmpresa</h3>
                     <p>Setor</p>
                 </div>
             </div>
         </section>
     </main>
-    
+    <dialog class="login__modal">
+        <div class="div__login">
+            <span>
+                <h2>Login</h2>
+                <button class="close__login__modal">X</button>
+            </span>
+            <p class="big__text">Preencha os campos para realizar login</p>
+            <input type="email" placeholder="Seu e-mail">
+            <input type="password" placeholder="Sua senha">
+            <button class="button__modal__login">Login</button>
+            <p class="small__text">ou</p>
+            <button class="button__register__modal">Cadastre-se</button>
+        </div>
+    </dialog>
+    <dialog class="register__modal">
+        <div class="div__register">
+            <h2>Cadastre-se</h2>
+            <input type="text" placeholder="Seu nome">
+            <input type="email" placeholder="Seu e-mail">
+            <input type="password" placeholder="Sua senha">
+            <button class="modal__register__button">Cadastrar</button>
+            <button class="modal__button__return">Retornar</button>
+        </div>
+    </dialog>
+    <script type="module" src="scripts/script.js"></script>
 </body>
 </html>

@@ -1,3 +1,6 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+
 :root{
     --color-brand-1: #0000FF;
     --color-brand-2: #3532FF;
@@ -18,7 +21,7 @@ header{
     justify-content: space-between;
     width: 100%;
     height: 100px;
-    border: 1px solid var(--color-grey-2);
+    border: 1px solid var(--color-grey-4);
     margin-top: -1px;
     margin-left: -1px;
     margin-right: -1px;
@@ -26,21 +29,21 @@ header{
 
 header > .logo{
     display: flex;
-    margin-left: 15%;
+    margin-left: 20%;
     gap: 5px;
 }
 
 header > .logo > h2{
     font-style: normal;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 39px;
 
     color: var(--color-grey-1);
 }
 
 header > .buttons{
-    margin-right: 15%;
+    margin-right: 20%;
     display: flex;
     gap: 15px;
 }
@@ -55,17 +58,17 @@ header > .buttons > button{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 21px;
     text-align: center;
 }
 
-header > .buttons > .login{
+header > .buttons > .login__button{
     background-color: white;
     color: var(--color-brand-1);
 }
 
-header > .buttons > .register{
+header > .buttons > .register__button{
     background-color: var(--color-brand-1);
     color: white;
 }
@@ -73,18 +76,231 @@ header > .buttons > .register{
 main{
     display: flex;
     justify-content: space-between;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 20%;
+    margin-right: 20%;
     margin-top: 20px;
     height: 85vh;
 }
 
 main > img{
-    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    height: 90%;
 }
 
 section{
-    border: 1px solid black;
-    width: 50%;
+    width: 40%;
+    height: 90%;
 }
 
+section > select{
+    width: 100%;
+    height: 50px;
+    border: none;
+    background-color: var(--color-brand-1);
+    color: white;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 30px;
+    padding: 0 30px;
+}
+
+.list__companies{
+    margin-top: 15px;
+    height: 91%;
+    padding: 15px 30px;
+    background-color: #F8F8F8;
+}
+
+.list__companies > h2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 39px;
+}
+
+.list__companies > div{
+    border: 1px solid var(--color-brand-1);
+    margin-top: 10px;
+    height: 70px;
+    padding: 10px 10px;
+}
+
+.list__companies > div > h3{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 24px;
+}
+
+.list__companies > div > p{
+    margin-top: 15px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    
+    color: var(--color-brand-1);
+    
+    box-sizing: border-box;
+    
+    border: 1px solid var(--color-brand-1);
+    border-radius: 255px;
+
+    width: 15%;
+    height: 23px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login__modal{
+    height: 400px;
+    width: 400px;
+    border: none;
+}
+
+.login__modal > .div__login{
+    display: flex;
+    flex-direction: column;
+}
+
+.login__modal > .div__login > span{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.login__modal > .div__login > span > h2{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+}
+
+.login__modal > .div__login > span > button{
+    border: none;
+    height: 20px;
+}
+
+.login__modal > .div__login > .big__text{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 22px;
+}
+
+.login__modal > .div__login > input{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    height: 30px;
+    margin-top: 15px;
+    padding: 0px 10px;
+}
+
+.login__modal > .div__login > .button__modal__login{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 22px;
+    
+    color: white;
+    background-color: var(--color-brand-1);
+    border: none;
+    height: 40px;
+    margin-top: 15px;
+}
+
+.login__modal > .div__login > .small__text{
+    display: flex;
+    align-self: center;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 22px;
+
+    margin-top: 10px;
+}
+
+.login__modal > .div__login > .button__register__modal{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 22px;
+    
+    color: var(--color-brand-1);
+    background-color: white;
+    border: 1px solid var(--color-brand-1);
+
+    height: 40px;
+
+    margin-top: 15px;
+}
+
+.register__modal{
+    height: 400px;
+    width: 400px;
+    border: none;
+}
+
+.register__modal > .div__register{
+    display: flex;
+    flex-direction: column;
+}
+
+.register__modal > .div__register > h2{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+}
+
+.register__modal > .div__register > input{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    height: 30px;
+    margin-top: 15px;
+    padding: 0px 10px;
+}
+
+.register__modal > .div__register > .modal__register__button{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 22px;
+    
+    color: white;
+    background-color: var(--color-brand-1);
+    border: none;
+    height: 40px;
+    margin-top: 15px;
+}
+
+.register__modal > .div__register > .modal__button__return{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 22px;
+    
+    color: var(--color-brand-1);
+    background-color: white;
+    border: 1px solid var(--color-brand-1);
+
+    height: 40px;
+
+    margin-top: 15px;
+}
