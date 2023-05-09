@@ -116,6 +116,7 @@ section > select{
     height: 91%;
     padding: 15px 30px;
     background-color: #F8F8F8;
+    overflow-x: auto;
 }
 
 .list__companies > h2{
@@ -157,8 +158,8 @@ section > select{
     border: 1px solid var(--color-brand-1);
     border-radius: 255px;
 
-    width: 15%;
     height: 23px;
+    width: 20%;
 
     display: flex;
     align-items: center;

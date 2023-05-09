@@ -30,7 +30,7 @@ const handleRegisterModal = () =>{
 }
 
 const getAllCategories = async () =>{
-    const allCategories = await fetch(`${baseUrl}/categories/redAll` , {
+    const allCategories = await fetch(`${baseUrl}/categories/readAll` , {
         method: "GET"
     })
     .then(res => res.json())
@@ -40,11 +40,49 @@ const getAllCategories = async () =>{
 
 const renderSelect = async () =>{
     const categories = await getAllCategories()
+    const select = document.querySelector('select')
 
-    console.log(categories)
+    categories.forEach(category =>{
+        const option = document.createElement('option')
+        option.id = category.id
+        option.value = category.name
+        option.innerText = category.name
+
+        select.appendChild(option)
+    })
 }
 
-renderSelect()
+const createListCompanies = (array) =>{
 
+    const div = document.createElement('div')
+    const h2 = document.createElement('h2')
+    const p = document.createElement('p')
+
+    h2.innerText = array.name
+    p.innerText = j
+
+    div.append(h2 , p)
+}
+
+const renderListCompanies = () =>{
+    const select = document.querySelector('select')
+
+    select.addEventListener('change' , async () =>{
+        const selectValue = select.value
+
+        const filterCategory = await fetch(`${baseUrl}/companies/readByCategory/${selectValue}` ,{
+            method: "GET"
+        })
+        .then(res => res.json())
+
+        console.log(filterCategory)
+
+        return filterCategory
+    })
+}
+
+renderListCompanies()
+
+renderSelect()
 handleRegisterModal()
 handleModalLogin()
