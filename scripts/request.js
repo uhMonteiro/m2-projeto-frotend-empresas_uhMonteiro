@@ -4,7 +4,7 @@ const requestHeaders = {
 }
 
 export async function loginRequest(loginBody){
-    const tokenRequest = await fetch(`${baseUrl}/auth/login`,{
+    const loginRequest = await fetch(`${baseUrl}/auth/login`,{
         method: "POST",
         headers: requestHeaders,
         body: JSON.stringify(loginBody),
@@ -12,23 +12,48 @@ export async function loginRequest(loginBody){
         if(res.ok){
             const responseJson = await res.json()
             const {authToken} = responseJson
+            console.log(authToken)
             localStorage.setItem('@final:token', JSON.stringify(authToken))
-            if(responseJson.isAdm = true){
+            localStorage.setItem('@final:isAdm', JSON.stringify(responseJson.isAdm))
+            if(responseJson.isAdm == true){
                 location.replace('./pages/adm.html')
             }else{
                 location.replace('./pages/user.html')
             }
-            
-            console.log(responseJson)
         }else{
             const responseJson = await res.json()
             alert(responseJson.message)
         }
     })
-    return tokenRequest
+    return loginRequest
 }
 
-//loginRequest({
-//    email: 'admin@mail.com',
-//    password: '123456'
-//})
+export async function createLogin(createBody) {
+    const modalRegister = document.querySelector('.register__modal')
+    const modalLogin = document.querySelector('.login__modal')
+    
+    const createEmployees = await fetch(`${baseUrl}/employees/create`,{
+        method:'POST',
+        headers: requestHeaders,
+        body: JSON.stringify(createBody)
+    })
+    .then(async (res) =>{
+        const responseJson = await res.json()
+        if(res.ok){
+            modalRegister.close()
+            modalLogin.showModal()
+        }else{
+            alert(responseJson.message)
+        }
+    })
+    return createEmployees
+}
+
+
+const createBody = {
+    name: "augusto",
+    email:"augusto@mail.com",
+    password: "senha"
+}
+
+//createLogin(createBody)

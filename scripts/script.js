@@ -109,16 +109,15 @@ async function  renderCompanies(){
 
     const allCategories = await getAllCategories()
 
+    
     if(allCategories.id == allCompanies.categoryId){
 
-        renderFilterCompanies(allCompanies, allCategories.value)
+        renderFilterCompanies(allCompanies, allCategories.name)
 
     }
 
     console.log(allCategories)
     console.log(allCompanies)
-
-
 }
 
 function handleLogin(){
@@ -142,9 +141,9 @@ function handleLogin(){
             count = 0
             return alert("preencha os campos necessários")
         }else{
-            const token = await loginRequest(loginBody)
+            const login = await loginRequest(loginBody)
 
-            return token
+            return login
         }
     })
 }
