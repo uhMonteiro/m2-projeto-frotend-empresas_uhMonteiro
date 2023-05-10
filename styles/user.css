@@ -56,6 +56,10 @@ header > button{
     color: var(--color-brand-1);
 }
 
+header > button:hover{
+    cursor: pointer;
+}
+
 main > div{
     margin-left: 20%;
     margin-right: 20%;

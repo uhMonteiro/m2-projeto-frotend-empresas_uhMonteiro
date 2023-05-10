@@ -4,11 +4,18 @@ import { loginRequest , createLogin } from "./request.js"
 
 const handleModalLogin = () =>{
     const modal = document.querySelector('.login__modal')
+    const registerModal = document.querySelector('.register__modal')
     const button = document.querySelector('.login__button')
+    const buttonRegister = document.querySelector('.button__register__modal')
     const buttonClose = document.querySelector('.close__login__modal')
 
     button.addEventListener('click', () =>{
         modal.showModal()
+    })
+
+    buttonRegister.addEventListener('click', () =>{
+        modal.close()
+        registerModal.showModal()
     })
 
     buttonClose.addEventListener('click' , () =>{
