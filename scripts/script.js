@@ -1,5 +1,5 @@
 const baseUrl = 'http://localhost:3333'
-import { loginRequest } from "./request.js"
+import { loginRequest , createLogin } from "./request.js"
 
 
 const handleModalLogin = () =>{
@@ -147,6 +147,35 @@ function handleLogin(){
         }
     })
 }
+
+function handleCreateLogin(){
+    const inputs = document.querySelectorAll('.input__register')
+    const button = document.querySelector('.modal__register__button')
+
+    let createBody = {}
+    let count = 0
+
+    button.addEventListener('click', async (e) =>{
+        e.preventDefault()
+
+        inputs.forEach(input =>{
+            if(input.value.trim() === ''){
+                count ++
+            }
+            createBody[input.name] = input.value
+        })
+        if(count !== 0){
+            count = 0
+            return alert("preencha os campos necessários")
+        }else{
+            const create = await createLogin(createBody)
+
+            return create
+        }
+    })
+}
+
+handleCreateLogin()
 
 handleLogin()
 await renderCompanies()

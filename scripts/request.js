@@ -13,7 +13,7 @@ export async function loginRequest(loginBody){
             const responseJson = await res.json()
             const {authToken} = responseJson
             console.log(authToken)
-            localStorage.setItem('@final:token', JSON.stringify(authToken))
+            localStorage.setItem('@final:token', authToken)
             localStorage.setItem('@final:isAdm', JSON.stringify(responseJson.isAdm))
             if(responseJson.isAdm == true){
                 location.replace('./pages/adm.html')
@@ -39,6 +39,7 @@ export async function createLogin(createBody) {
     })
     .then(async (res) =>{
         const responseJson = await res.json()
+        console.log(responseJson)
         if(res.ok){
             modalRegister.close()
             modalLogin.showModal()
@@ -50,10 +51,9 @@ export async function createLogin(createBody) {
 }
 
 
-const createBody = {
-    name: "augusto",
-    email:"augusto@mail.com",
-    password: "senha"
-}
+//const createBody = {
+//    name: "augusto",
+//    email:"augusto@mail.com",
+//    password: "senha"
+//}
 
-//createLogin(createBody)
