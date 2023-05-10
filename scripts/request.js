@@ -7,7 +7,7 @@ export async function loginRequest(loginBody){
     const tokenRequest = await fetch(`${baseUrl}/auth/login`,{
         method: "POST",
         headers: requestHeaders,
-        body: JSON.stringify(loginBody)
+        body: JSON.stringify(loginBody),
     }).then(async (res) =>{
         if(res.ok){
             const responseJson = await res.json()

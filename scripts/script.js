@@ -36,7 +36,6 @@ const getAllCategories = async () =>{
     })
     .then(res => res.json())
 
-   console.log(allCategories)
     return allCategories
 }
 
@@ -60,6 +59,7 @@ function filterCompanies() {
 
     select.addEventListener('change' , async () =>{
         const selectValue = select.value
+        console.log(selectValue)
         div.innerHTML = ""
 
         const filterCategory = await fetch(`${baseUrl}/companies/readByCategory/${selectValue}` ,{
@@ -78,14 +78,13 @@ function filterCompanies() {
                 return allCompanies
             }
         })
+        
 
-        console.log(filterCategory)
-
-        renderFilterCompanies(filterCategory)
+        renderFilterCompanies(filterCategory, selectValue)
     })
 }
 
-function renderFilterCompanies  (array) {
+function renderFilterCompanies  (array, selectValue) {
     const div = document.querySelector('.companies')
 
     array.forEach(arr =>{
@@ -95,6 +94,7 @@ function renderFilterCompanies  (array) {
         const p = document.createElement('p')
 
         h3.innerText = arr.name
+        p.innerText = selectValue
 
         divItens.append(h3 , p)
         div.appendChild(divItens)
@@ -107,7 +107,18 @@ async function  renderCompanies(){
     })
     .then(response => response.json())
 
-    renderFilterCompanies(allCompanies)
+    const allCategories = await getAllCategories()
+
+    if(allCategories.id == allCompanies.categoryId){
+
+        renderFilterCompanies(allCompanies, allCategories.value)
+
+    }
+
+    console.log(allCategories)
+    console.log(allCompanies)
+
+
 }
 
 function handleLogin(){
@@ -129,7 +140,7 @@ function handleLogin(){
         })
         if(count !== 0){
             count = 0
-            return alert('preencha os campos necessários')
+            return alert("preencha os campos necessários")
         }else{
             const token = await loginRequest(loginBody)
 
