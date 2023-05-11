@@ -45,8 +45,21 @@ async function userCompanyInformations(array){
     return company
 } 
 
+function createCardCompany(array) {
+    const section = document.querySelector('.company__informations')
+    
+    const divHeader = document.createElement('div')
+    const nameCompany = document.createElement('h2')
+    const nameDepartament = document.createElement('h2')
+    const divEmployees = document.createElement('div')
+    const nameEmployee = document.createElement('p')
+
+    nameCompany.innerText = a
+    nameDepartament.innerText = array.name
+
+}
+
 userCompanyInformations(await userProfile())
-console.log(await userProfile())
 createUserInformations(await userProfile())
 userProfile()
 logout()
