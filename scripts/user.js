@@ -61,24 +61,31 @@ function createCardCompany(array) {
     const nameCompany = document.createElement('h2')
     const p = document.createElement('p')
     const nameDepartament = document.createElement('h2')
-    const divEmployees = document.createElement('div')
-    const nameEmployee = document.createElement('p')
-
+    
     section.classList.add('section__employes')
     divHeader.classList.add('div__header')
-    divEmployees.classList.add('div__employees')
-
+    
     nameDepartament.innerText = array.name
     nameCompany.innerText = array.company.name
-    nameEmployee.innerText = array.employees.name
     p.innerText = "-"
 
-
     divHeader.append(nameCompany ,p, nameDepartament)
-    divEmployees.appendChild(nameEmployee)
+    section.appendChild(divHeader)
+    
+    array.employees.forEach(arr =>{
+        const divEmployees = document.createElement('div')
+        const nameEmployee = document.createElement('p')
+        divEmployees.classList.add('div__employees')
 
-    section.append(divHeader , divEmployees)
+        nameEmployee.innerText = arr.name
 
+        divEmployees.appendChild(nameEmployee)
+        section.appendChild(divEmployees)
+    })
+
+
+
+    
 }
 
 

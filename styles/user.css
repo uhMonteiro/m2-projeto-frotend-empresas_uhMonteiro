@@ -115,6 +115,7 @@ main > section > h2{
 main > .section__employes{
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 main > .section__employes > .div__header{
@@ -123,6 +124,7 @@ main > .section__employes > .div__header{
     align-items: center;
     justify-content: center;
     height: 80px;
+    width: 100%;
 }
 
 main > .section__employes > .div__header > h2{
