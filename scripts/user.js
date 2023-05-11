@@ -1,7 +1,7 @@
 const baseUrl = 'http://localhost:3333'
+const token = localStorage.getItem('@final:token')
 
 async function userProfile(){
-    const token = localStorage.getItem('@final:token')
     const user = await fetch(`${baseUrl}/employees/profile`,{
         method:'GET',
         headers: { Authorization: `Bearer ${token}`}
@@ -35,6 +35,17 @@ function createUserInformations(array){
     div.append(h2 , p)
 }
 
+async function userCompanyInformations(array){
+    const company = await fetch(`${baseUrl}/departments/readById/${array.department_id}`,{
+        method:"GET",
+        headers: { Authorization: `Bearer ${token}` }
+    })
+    .then(response => response.json())
+    console.log(company)
+    return company
+} 
+
+userCompanyInformations(await userProfile())
 console.log(await userProfile())
 createUserInformations(await userProfile())
 userProfile()
