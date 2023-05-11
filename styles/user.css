@@ -111,3 +111,54 @@ main > section > h2{
     font-size: 2rem;
     line-height: 39px;
 }
+
+main > .section__employes{
+    display: flex;
+    flex-direction: column;
+}
+
+main > .section__employes > .div__header{
+    display: flex;
+    background-color: var(--color-brand-1);
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+}
+
+main > .section__employes > .div__header > h2{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 39px;
+    
+    color: white;
+}
+
+main > .section__employes > .div__header > p{
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+main > .section__employes > .div__employees{
+    border: 1px solid var(--color-brand-1);
+    width: 200px;
+    height: 100px;
+
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+main > .section__employes > .div__employees > p{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 24px;
+    
+    margin-top: 10px;
+    margin-left: 10px;
+}

@@ -40,24 +40,47 @@ async function userCompanyInformations(array){
         method:"GET",
         headers: { Authorization: `Bearer ${token}` }
     })
-    .then(response => response.json())
+    .then(async (res) =>{
+        if(res.ok){
+            
+            const response = await res.json()
+            
+            createCardCompany(response)
+            return response
+        }
+    })
     console.log(company)
     return company
 } 
 
 function createCardCompany(array) {
-    const section = document.querySelector('.company__informations')
+    const section = document.getElementById(12)
+    section.innerHTML = ""
     
     const divHeader = document.createElement('div')
     const nameCompany = document.createElement('h2')
+    const p = document.createElement('p')
     const nameDepartament = document.createElement('h2')
     const divEmployees = document.createElement('div')
     const nameEmployee = document.createElement('p')
 
-    nameCompany.innerText = a
+    section.classList.add('section__employes')
+    divHeader.classList.add('div__header')
+    divEmployees.classList.add('div__employees')
+
     nameDepartament.innerText = array.name
+    nameCompany.innerText = array.company.name
+    nameEmployee.innerText = array.employees.name
+    p.innerText = "-"
+
+
+    divHeader.append(nameCompany ,p, nameDepartament)
+    divEmployees.appendChild(nameEmployee)
+
+    section.append(divHeader , divEmployees)
 
 }
+
 
 userCompanyInformations(await userProfile())
 createUserInformations(await userProfile())
