@@ -55,6 +55,7 @@ async function userCompanyInformations(array){
 
 function createCardCompany(array) {
     const section = document.getElementById(12)
+    const sectionHeader = document.querySelector('.header__company')
     section.innerHTML = ""
     
     const divHeader = document.createElement('div')
@@ -70,7 +71,7 @@ function createCardCompany(array) {
     p.innerText = "-"
 
     divHeader.append(nameCompany ,p, nameDepartament)
-    section.appendChild(divHeader)
+    sectionHeader.appendChild(divHeader)
     
     array.employees.forEach(arr =>{
         const divEmployees = document.createElement('div')

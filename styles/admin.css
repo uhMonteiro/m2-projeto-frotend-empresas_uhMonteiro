@@ -1,0 +1,147 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+
+:root{
+    --color-brand-1: #0000FF;
+    --color-brand-2: #3532FF;
+    --color-action-1: #36B37E;
+    --color-action-2: #FF5630;
+    --color-action-3: #FFAB00;
+    --color-grey-1:#212529 ;
+    --color-grey-2:#495057 ;
+    --color-grey-3:#ADB5BD ;
+    --color-grey-4:#E9ECEF ;
+    --color-grey-5:#F1F3F5 ;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--color-grey-4);
+    height: 60px;
+}
+
+header > div{
+    display: flex;
+    margin-left: 20%;
+    gap: 10px;
+}
+
+header > div > h2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 39px;
+}
+
+header > button{
+    margin-right: 20%;
+
+    box-sizing: border-box;
+    border: 1px solid var(--color-brand-1);
+
+    height: 50px;
+    width: 150px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 21px;
+    text-align: center;
+
+    background-color: white;
+    color: var(--color-brand-1);
+}
+
+header > button:hover{
+    cursor: pointer;
+}
+
+main{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 20px;
+}
+
+main > .section__top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+main > .section__top > .div__tittle{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.875rem;
+    line-height: 36px;
+}
+
+main > .section__top > .div__buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+main > .section__top > .div__buttons > select{
+    height: 30px;
+    border: none;
+    background-color: var(--color-brand-1);
+    color: white;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 30px;
+    padding: 0 30px;
+}
+
+main > .section__top > .div__buttons > button{
+    background-color: var(--color-brand-1);
+    margin-top: 10px;
+    height: 30px;
+    width: 100px;
+    align-self: flex-end;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+
+    color: white;
+
+    border: none;
+}
+
+main > .section__departaments{
+    height: 300px;
+    margin-top: 5px;
+    overflow-y: auto;
+    background-color: var(--color-grey-5);
+}
+
+main > h2{
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.875rem;
+    line-height: 36px;
+
+    margin-top: 10px;
+}
+
+main > .section__register{
+    height: 300px;
+    margin-top: 5px;
+    overflow-y: auto;
+    background-color: var(--color-grey-5);
+}
