@@ -1,6 +1,14 @@
 const baseUrl = 'http://localhost:3333'
 const token = localStorage.getItem('@final:token')
 
+function authentication(){
+
+    if(!token){
+        location.replace('/')
+    }
+}
+
+
 async function userProfile(){
     const user = await fetch(`${baseUrl}/employees/profile`,{
         method:'GET',
@@ -89,7 +97,7 @@ function createCardCompany(array) {
     
 }
 
-
+authentication()
 userCompanyInformations(await userProfile())
 createUserInformations(await userProfile())
 userProfile()
