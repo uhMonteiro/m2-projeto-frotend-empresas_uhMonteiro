@@ -68,7 +68,6 @@ async function selectCompanys(){
         method: 'GET'
     })
     .then(response => response.json())
-    console.log(allCompanies)
 
     allCompanies.forEach(companie =>{
         const option = document.createElement('option')
@@ -78,6 +77,7 @@ async function selectCompanys(){
 
         select.appendChild(option)
     })
+    return allCompanies
 }
 
 function companyDepartaments(){
@@ -126,9 +126,50 @@ function renderDepartaments(array){
     })
 }
 
-console.log(await getEmployees())
+function dialogCreateDepartament(){
+    const button = document.querySelector('.create__button')
+    const modal = document.querySelector('.dialog__create__departament')
+    const buttonClose = document.querySelector('.close__modal')
 
-selectCompanys()
+    button.addEventListener('click', () =>{
+        modal.showModal()
+    })
+
+    buttonClose.addEventListener('click' , () =>{
+        modal.close()
+    })
+}
+
+async function department(array){
+    const select = document.querySelector('.departament__select')
+
+    array.forEach(arr =>{
+        const option = document.createElement('option')
+        option.innerText = arr.name
+        option.value = arr.id
+
+        select.appendChild(option)
+    })
+}
+
+//function handleCreateDepartament(){
+//    const select = document.querySelector('.departament__select')
+//
+//    let selectValue = {}
+//
+//    select.addEventListener('change', async () =>{
+//        selectValue = select.value
+//
+//        return selectValue
+//    })
+//    console.log(selectValue)
+//}
+//
+//handleCreateDepartament()
+
+department(await selectCompanys())
+console.log(await getEmployees())
+dialogCreateDepartament()
 logout()
 companyDepartaments()
 

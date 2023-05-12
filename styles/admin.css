@@ -220,3 +220,73 @@ main > .section__register > div > nav > img{
     margin-right: 10px;
 }
 
+.dialog__create__departament{
+    height: 300px;
+    width: 400px;
+    border: none;
+}
+
+.dialog__create__departament > .div__create__departament{
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog__create__departament > .div__create__departament > span{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dialog__create__departament > .div__create__departament > span > h2{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 54px;
+}
+
+.dialog__create__departament > .div__create__departament > span > button{
+    border: none;
+    width: 30px;
+    height: 30px;
+}
+
+.dialog__create__departament > .div__create__departament > input{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 15px;
+}
+
+.dialog__create__departament > .div__create__departament > select{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    
+    color: rgba(0, 0, 0, 0.5);
+
+    margin-top: 15px;
+}
+
+.dialog__create__departament > .div__create__departament > button{
+    background-color: var(--color-action-1);
+    border: none;
+    margin-top: 15px;
+    height: 40px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+

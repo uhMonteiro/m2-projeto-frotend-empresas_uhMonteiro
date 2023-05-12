@@ -26,7 +26,7 @@
                 <select name="" id="" class="select__companies">
                     <option value="">Selecionar Empresa</option>
                 </select>
-                <button> <img src="../images/+.svg" alt=""> Criar</button>
+                <button class="create__button"> <img src="../images/+.svg" alt=""> Criar</button>
             </div>
         </section>
         <section class="section__departaments">
@@ -36,6 +36,20 @@
         <section class="section__register">
 
         </section>
+        <dialog class="dialog__create__departament">
+            <div class="div__create__departament">
+                <span>
+                    <h2>Criar Departamento</h2>
+                    <button class="close__modal">X</button>
+                </span>
+                <input type="text" placeholder="Nome do departamento">
+                <input type="text" placeholder="Descrição">
+                <select name="" id="" class="departament__select">
+                    <option value="">Selecionar empresa</option>
+                </select>
+                <button>Criar</button>
+            </div>
+        </dialog>
     </main>
     <script type="module" src="../scripts/admin.js"></script>
 </body>
