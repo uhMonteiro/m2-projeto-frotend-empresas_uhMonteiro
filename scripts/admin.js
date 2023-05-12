@@ -43,6 +43,7 @@ function createUsersArea(array){
         const span = document.createElement('span')
         const h2 = document.createElement('h2')
         const p = document.createElement('p')
+        const nav = document.createElement('nav')
         const pencil__img = document.createElement('img')
         const trash__img = document.createElement('img')
 
@@ -53,7 +54,8 @@ function createUsersArea(array){
         trash__img.id = arr.id
 
         span.append(h2 , p)
-        div.append(span , pencil__img , trash__img)
+        nav.append(pencil__img , trash__img)
+        div.append(span , nav)
 
         section.appendChild(div)
     })
