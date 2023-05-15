@@ -1,6 +1,20 @@
 const baseUrl = 'http://localhost:3333'
 import { loginRequest , createLogin } from "./request.js"
+const token = localStorage.getItem('@final:token')
+const tokenValue = localStorage.getItem('@final:isAdm')
 
+function authentication(){
+
+    if(token){
+        if(tokenValue === 'false'){
+            location.replace('/pages/user.html')
+        }else{
+            location.replace('/pages/adm.html')
+        }
+    }
+}
+
+authentication()
 
 const handleModalLogin = () =>{
     const modal = document.querySelector('.login__modal')

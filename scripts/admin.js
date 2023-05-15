@@ -148,27 +148,82 @@ async function department(array){
         option.innerText = arr.name
         option.value = arr.id
 
+
         select.appendChild(option)
     })
 }
 
-//function handleCreateDepartament(){
-//    const select = document.querySelector('.departament__select')
-//
-//    let selectValue = {}
-//
-//    select.addEventListener('change', async () =>{
-//        selectValue = select.value
-//
-//        return selectValue
-//    })
-//    console.log(selectValue)
-//}
-//
-//handleCreateDepartament()
+function handleCreateDepartament(){
+    const select = document.querySelector('.departament__select')
+    const button = document.querySelector('.department__create')
+    const inputs = document.querySelectorAll('.input__departament')
 
+
+    let selectValue = {}
+    let departmentBody = {}
+    let count = 0
+
+    select.addEventListener('change', async () =>{
+        selectValue = select.value
+        button.addEventListener('click' , async (event) =>{
+            event.preventDefault()
+
+         inputs.forEach(input =>{
+            if(input.value.trim() === ""){
+                count ++
+            }
+
+            departmentBody[input.name] = input.value 
+            departmentBody[select.name] = select.value
+            console.log(departmentBody)
+         })
+         if(count !== 0){
+            count = 0
+
+            return alert('preencha os campos necessarios')
+         }else{
+            const jb = await createDepartament(departmentBody)
+
+            return jb
+         }
+            
+        })
+       
+    })
+}
+
+async function createDepartament(departamentBod){
+    const modal = document.querySelector('.dialog__create__departament')
+
+    const create = await fetch(`${baseUrl}/departments/create`,{
+        method:'POST',
+        headers: { Authorization: `Bearer ${token}`},
+        body: JSON.stringify(departamentBod)
+    })
+    .then(async (res) =>{
+        const responseJson = await res.json()
+        console.log(responseJson)
+        if(res.ok){
+            modal.close()
+        }else{
+            alert(responseJson.message)
+        }
+    })
+    return create
+}
+
+
+
+//const departamentBody = {
+//    name: "test",
+//    description: "Departamento responsavel pela sua segurança",
+//    company_id: "86bffcd8-ff51-4b42-8dd2-e60639a3dc13"
+//}
+
+
+handleCreateDepartament()
 department(await selectCompanys())
-console.log(await getEmployees())
+await getEmployees()
 dialogCreateDepartament()
 logout()
 companyDepartaments()
