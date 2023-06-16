@@ -45,7 +45,7 @@ header > .logo > h2{
 header > .buttons{
     margin-right: 20%;
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 header > .buttons > button{
